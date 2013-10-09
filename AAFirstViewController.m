@@ -30,7 +30,7 @@
     [super viewDidLoad];
 
     self.navigationController.navigationBarHidden = YES;
-
+    self.teamBoardTable.rowHeight = 50;
     self.teamBoardsArray = [NSMutableArray new];
     [teamBoardsArray addObject:@"along"];
     [teamBoardsArray addObject:@"angah"];
@@ -60,6 +60,9 @@
     
     NSString *string =  [teamBoardsArray objectAtIndex:indexPath.row];
     cell.textLabel.text = string;
+    UITextField *txtField = [[UITextField alloc] initWithFrame:CGRectMake(0, 0, 100, 30)];
+    txtField.backgroundColor = [UIColor yellowColor];
+    [cell.contentView addSubview:txtField];
     return cell;
     
 }
@@ -75,20 +78,8 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)AddBoardBtn:(id)sender {
-//    //int nextCell = teamBoardsArray.count;
-//    int currentFreeCell = teamBoardsArray.count;
-//    
-//    CGRect textFrame = cell.contentView.frame;
-//    
-//    self.inputTeamBoardName.frame = textFrame;
-//    self.inputTeamBoardName.text = @"test";
-//    self.inputTeamBoardName.backgroundColor = [UIColor grayColor];
-//    
-//    [[cell.contentView viewWithTag:currentFreeCell] addSubview:inputTeamBoardName];
-//    
-//    [inputTeamBoardName becomeFirstResponder];
-//    
-//    [teamBoardTable reloadData];
+- (IBAction)AddBoardBtn:(id)sender
+{
+    
 }
 @end
