@@ -9,18 +9,12 @@
 #import "AAFirstViewController.h"
 
 @interface AAFirstViewController ()
-
-- (IBAction)AddBoardBtn:(id)sender;
-
 @property (strong,nonatomic) NSMutableArray *teamBoardsArray;
-@property (strong,nonatomic) UITextField *inputTeamBoardName;
-@property (strong,nonatomic) UITableViewCell *cell;
-@property (strong, nonatomic) UITableView *teamBoardTable;
-
 @end
 
 @implementation AAFirstViewController
-@synthesize teamBoardsArray,inputTeamBoardName,cell, teamBoardTable;
+
+@synthesize teamBoardsArray, teamBoardTable;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -34,14 +28,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+
     self.navigationController.navigationBarHidden = YES;
 
     self.teamBoardsArray = [NSMutableArray new];
-    
-    self.inputTeamBoardName = [UITextField new];
-    
-    
+    [teamBoardsArray addObject:@"along"];
+    [teamBoardsArray addObject:@"angah"];
 }
 
 -(NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -58,9 +50,11 @@
 -(UITableViewCell*) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSString *Identifier = @"cell";
-    self.cell = [tableView dequeueReusableCellWithIdentifier:Identifier];
+
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:Identifier];
     
-    if (cell == nil) {
+    if (cell == nil)
+    {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:Identifier];
     }
     
@@ -82,19 +76,19 @@
 }
 
 - (IBAction)AddBoardBtn:(id)sender {
-    //int nextCell = teamBoardsArray.count;
-    int currentFreeCell = teamBoardsArray.count;
-    
-    CGRect textFrame = cell.contentView.frame;
-    
-    self.inputTeamBoardName.frame = textFrame;
-    self.inputTeamBoardName.text = @"test";
-    self.inputTeamBoardName.backgroundColor = [UIColor grayColor];
-    
-    [[cell.contentView viewWithTag:currentFreeCell] addSubview:inputTeamBoardName];
-    
-    [inputTeamBoardName becomeFirstResponder];
-    
-    [teamBoardTable reloadData];
+//    //int nextCell = teamBoardsArray.count;
+//    int currentFreeCell = teamBoardsArray.count;
+//    
+//    CGRect textFrame = cell.contentView.frame;
+//    
+//    self.inputTeamBoardName.frame = textFrame;
+//    self.inputTeamBoardName.text = @"test";
+//    self.inputTeamBoardName.backgroundColor = [UIColor grayColor];
+//    
+//    [[cell.contentView viewWithTag:currentFreeCell] addSubview:inputTeamBoardName];
+//    
+//    [inputTeamBoardName becomeFirstResponder];
+//    
+//    [teamBoardTable reloadData];
 }
 @end

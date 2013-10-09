@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface AAFirstViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
-
+@property (weak, nonatomic) IBOutlet UITableView *teamBoardTable;
+- (IBAction)AddBoardBtn:(id)sender;
 @end
