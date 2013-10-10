@@ -10,11 +10,13 @@
 
 @interface AAFirstViewController ()
 @property (strong,nonatomic) NSMutableArray *teamBoardsArray;
+@property int currentCount;
+@property CGRect cellFrame;
 @end
 
 @implementation AAFirstViewController
 
-@synthesize teamBoardsArray, teamBoardTable;
+@synthesize teamBoardsArray, teamBoardTable, currentCount,cellFrame;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -32,8 +34,7 @@
     self.navigationController.navigationBarHidden = YES;
     self.teamBoardTable.rowHeight = 50;
     self.teamBoardsArray = [NSMutableArray new];
-    [teamBoardsArray addObject:@"along"];
-    [teamBoardsArray addObject:@"angah"];
+    self.currentCount = 0;
 }
 
 -(NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -58,11 +59,8 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:Identifier];
     }
     
-    NSString *string =  [teamBoardsArray objectAtIndex:indexPath.row];
-    cell.textLabel.text = string;
-    UITextField *txtField = [[UITextField alloc] initWithFrame:CGRectMake(0, 0, 100, 30)];
-    txtField.backgroundColor = [UIColor yellowColor];
-    [cell.contentView addSubview:txtField];
+    [cell.contentView addSubview:[teamBoardsArray objectAtIndex:(teamBoardsArray.count-1)]];
+    
     return cell;
     
 }
@@ -80,6 +78,21 @@
 
 - (IBAction)AddBoardBtn:(id)sender
 {
+    CGSize tableview = teamBoardTable.contentSize;
+    UITextField *tempTextField = [[UITextField alloc] initWithFrame:
+                                  CGRectMake(0, 0, tableview.width, tableview.height)];
+    tempTextField.delegate = self;
     
+    [teamBoardsArray addObject:tempTextField];
+    
+    [teamBoardTable reloadData];
+
 }
+
+- (BOOL) textFieldShouldReturn:(UITextField *)textField
+{
+    [textField resignFirstResponder];
+    return YES;
+}
+
 @end
