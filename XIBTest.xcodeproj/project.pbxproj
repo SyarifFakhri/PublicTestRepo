@@ -454,6 +454,7 @@
 				135624BA18056F380074F73E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		135624BB18056F380074F73E /* Build configuration list for PBXNativeTarget "XIBTestTests" */ = {
 			isa = XCConfigurationList;
@@ -462,6 +463,7 @@
 				135624BD18056F380074F73E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
