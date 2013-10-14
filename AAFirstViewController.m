@@ -12,6 +12,7 @@
 @property (strong,nonatomic) NSMutableArray *teamBoardsArray, *arrayBtns, *viewTag;
 @property int currentCount;
 @property CGRect cellFrame;
+@property LBAppDelegate *appDelegate;
 @end
 
 @implementation AAFirstViewController
@@ -30,6 +31,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+
+    self.appDelegate = (LBAppDelegate*)[[UIApplication sharedApplication]delegate];
 
     self.navigationController.navigationBarHidden = YES;
     self.teamBoardTable.rowHeight = 50;
@@ -60,7 +63,8 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:Identifier];
     }
     
-    [cell.contentView addSubview:[arrayBtns objectAtIndex:indexPath.row]];
+//    [cell.contentView addSubview:[arrayBtns objectAtIndex:indexPath.row]];
+    cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
     [cell.contentView addSubview:[teamBoardsArray objectAtIndex:indexPath.row]];
     
     return cell;
@@ -78,29 +82,23 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)AddBoardBtn:(id)sender
-{
-    //set the ui text field
-    UITextField *tempTextField = [[UITextField alloc] initWithFrame:
-                                  CGRectMake(0, 0, self.view.bounds.size.width - 70, 44)];
-    tempTextField.delegate = self;
-    tempTextField.textAlignment = NSTextAlignmentCenter;
-    
-    
-    //add button
-    UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    button.frame = CGRectMake(245, 0, 75, 50);
-    [button setTitle:@"Next" forState:UIControlStateNormal];
-    [button addTarget:self action:@selector(nextView) forControlEvents:UIControlEventTouchUpInside];
-    
-    [teamBoardsArray addObject:tempTextField];
-    [arrayBtns addObject:button];
-    
-    [teamBoardTable reloadData];
-    
-    [tempTextField becomeFirstResponder];
+//- (IBAction)AddBoardBtn:(id)sender
+//{
+//    //set the ui text field
+//    UITextField *tempTextField = [[UITextField alloc] initWithFrame:
+//                                  CGRectMake(0, 0, self.view.bounds.size.width - 70, 44)];
+//    tempTextField.delegate = self;
+//    tempTextField.textAlignment = NSTextAlignmentCenter;
+//    
+//    [teamBoardsArray addObject:tempTextField];
+////    [arrayBtns addObject:button];
+//    
+//    [teamBoardTable reloadData];
+//    
+//    [tempTextField becomeFirstResponder];
+//
+//}
 
-}
 
 - (BOOL) textFieldShouldReturn:(UITextField *)textField
 {
@@ -119,11 +117,33 @@
     }
 }
 
--(void) nextView
+- (void) tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
 {
-    NSLog(@"Button Clicked");
+    //The current view is the int "currentBoardInt" This will then be used to call a 2 dimensional array.
+    self.appDelegate.currentBoardInt = indexPath.row;
+    NSLog(@"currentBoard:%d",self.appDelegate.currentBoardInt);
+    
+    AABoardViewController *viewController = [[AABoardViewController alloc] initWithNibName:@"AABoardViewController" bundle:nil] ;
+    [self.navigationController pushViewController:viewController animated:YES];
 }
 
 
+- (IBAction)settingsBtn:(id)sender {
+    LBSettingsViewController *viewController = [LBSettingsViewController new];
+    [self.navigationController pushViewController:viewController animated:NO];
+}
 
+- (IBAction)addBoardBtn:(id)sender {
+    //set the ui text field
+    UITextField *tempTextField = [[UITextField alloc] initWithFrame:
+                                  CGRectMake(0, 0, self.view.bounds.size.width - 70, 44)];
+    tempTextField.delegate = self;
+    tempTextField.textAlignment = NSTextAlignmentCenter;
+
+    [teamBoardsArray addObject:tempTextField];
+
+    [teamBoardTable reloadData];
+
+    [tempTextField becomeFirstResponder];
+}
 @end

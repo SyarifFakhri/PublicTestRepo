@@ -11,5 +11,7 @@
 @interface LBAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
+@property int currentBoardInt;
+@property NSMutableArray *currentBoardArray, *currentBoardConvArray;
 
 @end

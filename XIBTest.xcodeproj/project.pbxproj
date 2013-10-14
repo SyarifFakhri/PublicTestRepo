@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		13353A3F18094DE400B979F6 /* LBSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13353A3D18094DE400B979F6 /* LBSettingsViewController.m */; };
+		13353A4018094DE400B979F6 /* LBSettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13353A3E18094DE400B979F6 /* LBSettingsViewController.xib */; };
 		1356249018056F380074F73E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1356248F18056F380074F73E /* Foundation.framework */; };
 		1356249218056F380074F73E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1356249118056F380074F73E /* CoreGraphics.framework */; };
 		1356249418056F380074F73E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1356249318056F380074F73E /* UIKit.framework */; };
@@ -21,6 +23,8 @@
 		135624B518056F380074F73E /* XIBTestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 135624B418056F380074F73E /* XIBTestTests.m */; };
 		135624C6180574000074F73E /* AAFirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 135624C4180574000074F73E /* AAFirstViewController.m */; };
 		135624C7180574000074F73E /* AAFirstViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 135624C5180574000074F73E /* AAFirstViewController.xib */; };
+		138E0A391807F7EB003353FB /* AABoardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 138E0A371807F7EB003353FB /* AABoardViewController.m */; };
+		138E0A3A1807F7EB003353FB /* AABoardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 138E0A381807F7EB003353FB /* AABoardViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +38,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		13353A3C18094DE400B979F6 /* LBSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBSettingsViewController.h; sourceTree = "<group>"; };
+		13353A3D18094DE400B979F6 /* LBSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBSettingsViewController.m; sourceTree = "<group>"; };
+		13353A3E18094DE400B979F6 /* LBSettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LBSettingsViewController.xib; sourceTree = "<group>"; };
 		1356248C18056F380074F73E /* XIBTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XIBTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1356248F18056F380074F73E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1356249118056F380074F73E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -53,6 +60,9 @@
 		135624C3180574000074F73E /* AAFirstViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AAFirstViewController.h; path = ../AAFirstViewController.h; sourceTree = "<group>"; };
 		135624C4180574000074F73E /* AAFirstViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AAFirstViewController.m; path = ../AAFirstViewController.m; sourceTree = "<group>"; };
 		135624C5180574000074F73E /* AAFirstViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AAFirstViewController.xib; path = ../AAFirstViewController.xib; sourceTree = "<group>"; };
+		138E0A361807F7EB003353FB /* AABoardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AABoardViewController.h; path = ../AABoardViewController.h; sourceTree = "<group>"; };
+		138E0A371807F7EB003353FB /* AABoardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AABoardViewController.m; path = ../AABoardViewController.m; sourceTree = "<group>"; };
+		138E0A381807F7EB003353FB /* AABoardViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AABoardViewController.xib; path = ../AABoardViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +127,12 @@
 				135624C3180574000074F73E /* AAFirstViewController.h */,
 				135624C4180574000074F73E /* AAFirstViewController.m */,
 				135624C5180574000074F73E /* AAFirstViewController.xib */,
+				13353A3C18094DE400B979F6 /* LBSettingsViewController.h */,
+				13353A3D18094DE400B979F6 /* LBSettingsViewController.m */,
+				13353A3E18094DE400B979F6 /* LBSettingsViewController.xib */,
+				138E0A361807F7EB003353FB /* AABoardViewController.h */,
+				138E0A371807F7EB003353FB /* AABoardViewController.m */,
+				138E0A381807F7EB003353FB /* AABoardViewController.xib */,
 				135624A118056F380074F73E /* Images.xcassets */,
 				1356249618056F380074F73E /* Supporting Files */,
 			);
@@ -231,6 +247,8 @@
 				135624C7180574000074F73E /* AAFirstViewController.xib in Resources */,
 				1356249A18056F380074F73E /* InfoPlist.strings in Resources */,
 				135624A218056F380074F73E /* Images.xcassets in Resources */,
+				13353A4018094DE400B979F6 /* LBSettingsViewController.xib in Resources */,
+				138E0A3A1807F7EB003353FB /* AABoardViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -252,6 +270,8 @@
 				135624A018056F380074F73E /* LBAppDelegate.m in Sources */,
 				135624C6180574000074F73E /* AAFirstViewController.m in Sources */,
 				1356249C18056F380074F73E /* main.m in Sources */,
+				138E0A391807F7EB003353FB /* AABoardViewController.m in Sources */,
+				13353A3F18094DE400B979F6 /* LBSettingsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

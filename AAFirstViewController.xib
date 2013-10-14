@@ -30,30 +30,37 @@
                         <outlet property="delegate" destination="-1" id="ifK-ck-pDM"/>
                     </connections>
                 </tableView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hre-8S-arI">
-                    <rect key="frame" x="226" y="527" width="74" height="30"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="30" id="KwA-dg-418"/>
-                    </constraints>
-                    <state key="normal" title="Add Board">
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <connections>
-                        <action selector="AddBoardBtn:" destination="-1" eventType="touchUpInside" id="vbZ-QW-3Bu"/>
-                    </connections>
-                </button>
+                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CJ7-uf-g98">
+                    <rect key="frame" x="0.0" y="524" width="320" height="44"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                    <items>
+                        <barButtonItem title="Boards" id="Mxo-db-Y3Z">
+                            <color key="tintColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                        </barButtonItem>
+                        <barButtonItem title="Settings" width="135" id="9hE-3a-0pL">
+                            <connections>
+                                <action selector="settingsBtn:" destination="-1" id="KeW-hv-7vz"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem title="Add board" id="Dad-ga-Qlw">
+                            <connections>
+                                <action selector="addBoardBtn:" destination="-1" id="1YT-bC-M8O"/>
+                            </connections>
+                        </barButtonItem>
+                    </items>
+                </toolbar>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="vnm-ha-cXS" firstAttribute="centerX" secondItem="k8r-YQ-qQN" secondAttribute="centerX" id="Ek8-df-FjY"/>
                 <constraint firstItem="k8r-YQ-qQN" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="NbX-nb-k0c"/>
+                <constraint firstAttribute="bottom" secondItem="CJ7-uf-g98" secondAttribute="bottom" id="Ode-Jk-ayW"/>
+                <constraint firstItem="CJ7-uf-g98" firstAttribute="leading" secondItem="k8r-YQ-qQN" secondAttribute="leading" id="XbU-gq-9q0"/>
                 <constraint firstItem="k8r-YQ-qQN" firstAttribute="centerY" secondItem="1" secondAttribute="centerY" id="Z3X-Vf-cxz"/>
                 <constraint firstItem="k8r-YQ-qQN" firstAttribute="top" secondItem="vnm-ha-cXS" secondAttribute="bottom" constant="8" id="aVx-gi-464"/>
                 <constraint firstAttribute="bottom" secondItem="k8r-YQ-qQN" secondAttribute="bottom" constant="49" id="ciY-Hm-LRE"/>
-                <constraint firstAttribute="trailing" secondItem="hre-8S-arI" secondAttribute="trailing" constant="20" symbolic="YES" id="fbn-lz-oiw"/>
                 <constraint firstAttribute="trailing" secondItem="k8r-YQ-qQN" secondAttribute="trailing" id="pEg-g7-gz8"/>
-                <constraint firstItem="hre-8S-arI" firstAttribute="top" secondItem="k8r-YQ-qQN" secondAttribute="bottom" constant="8" id="x1A-GH-rY8"/>
+                <constraint firstItem="CJ7-uf-g98" firstAttribute="trailing" secondItem="k8r-YQ-qQN" secondAttribute="trailing" id="zqS-Tq-47v"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
         </view>
